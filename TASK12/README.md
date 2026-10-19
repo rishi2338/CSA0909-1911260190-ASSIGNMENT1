@@ -14,7 +14,7 @@ Jagged arrays can represent parking floors that have different capacities.
 Open a terminal in the Task12 folder and execute:
 
 ```bash
-javac -d out src/parking/ParkingSystemDemo.java
+javac -d out ParkingSystemDemo.java
 java -cp out parking.ParkingSystemDemo
 ```
 
