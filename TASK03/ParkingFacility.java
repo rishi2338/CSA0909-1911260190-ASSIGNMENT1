@@ -1,53 +1,25 @@
-import java.util.Arrays;
-
-public class ParkingFacility {
-    // slots[floor][slot] holds a vehicle number, or null if the slot is free
-    private final String[][] slots;
-
-    public ParkingFacility(int[] slotsPerFloor) {
-        slots = new String[slotsPerFloor.length][];
-        for (int f = 0; f < slotsPerFloor.length; f++) {
-            slots[f] = new String[slotsPerFloor[f]];
-        }
-    }
-
-    /** Returns {floor, slot} of the first free slot, or null if it is full. */
-    public int[] allocate(String vehicleNo) {
-        for (int floor = 0; floor < slots.length; floor++) {
-            for (int slot = 0; slot < slots[floor].length; slot++) {
-                if (slots[floor][slot] == null) {
-                    slots[floor][slot] = vehicleNo;
-                    return new int[] { floor, slot };
+public class Task03 {
+    public static void main(String[] args) {
+        int[][] parking = new int[2][2];
+        int row = -1;
+        int col = -1;
+        for (int i = 0; i < parking.length; i++) {
+            for (int j = 0; j < parking[i].length; j++) {
+                if (parking[i][j] == 0) {
+                    row = i;
+                    col = j;
+                    parking[i][j] = 1;
+                    break;
                 }
             }
+            if (row != -1) {
+                break;
+            }
         }
-        return null;
-    }
-
-    /** Frees a slot. Returns false if the position is invalid or already free. */
-    public boolean release(int floor, int slot) {
-        if (floor < 0 || floor >= slots.length) {
-            return false;
+        if (row != -1) {
+            System.out.println("Slot allocated: " + row + ", " + col);
+        } else {
+            System.out.println("Parking full");
         }
-        if (slot < 0 || slot >= slots[floor].length) {
-            return false;
-        }
-        if (slots[floor][slot] == null) {
-            return false;
-        }
-        slots[floor][slot] = null;
-        return true;
-    }
-
-    public static void main(String[] args) {
-        // floor 0 has 2 slots, floor 1 has 1 slot
-        ParkingFacility p = new ParkingFacility(new int[]{2, 1});
-        System.out.println(Arrays.toString(p.allocate("TN01AB1111")));
-        System.out.println(Arrays.toString(p.allocate("TN02CD2222")));
-        System.out.println(Arrays.toString(p.allocate("TN03EF3333")));
-        System.out.println(Arrays.toString(p.allocate("TN04GH4444")));
-        System.out.println(p.release(0, 1) + " " + p.release(0, 1) + " "
-                + p.release(5, 0));
-        System.out.println(Arrays.toString(p.allocate("TN04GH4444")));
     }
 }
