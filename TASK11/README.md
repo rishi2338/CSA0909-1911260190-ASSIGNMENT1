@@ -14,7 +14,7 @@ The example parking rates are assumptions used for demonstration purposes.
 Open a terminal in the Task11 folder and execute:
 
 ```bash
-javac -d out src/parking/ParkingSystemDemo.java
+javac -d out ParkingSystemDemo.java
 java -cp out parking.ParkingSystemDemo
 ```
 
