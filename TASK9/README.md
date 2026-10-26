@@ -1,0 +1,5 @@
+# Task 9 — abstraction
+
+`Vehicle` should be abstract because every vehicle has a registration and fee API, but the base class cannot know the correct category rate. `ratePerHour()` is abstract. `Chargeable` is an interface because charging is a capability that only some vehicles possess; a class may implement multiple interfaces such as `Chargeable` and `Insurable`. An interface default method can provide a shared optional operation, while a static interface method can validate or convert charging units.
+
+If `Vehicle` became an interface, it could not hold ordinary per-instance fields initialized by a constructor; each implementation would need its own registration state or delegate it. Interfaces can extend multiple interfaces, but classes still extend only one class. Making `Chargeable` an abstract class would prevent `ElectricCar` from also extending `Car` in Java, because Java has single class inheritance. Dispatch time remains O(1) in typical use; state and references determine O(1) per-object overhead, not whether the method is abstract or interface-based.
