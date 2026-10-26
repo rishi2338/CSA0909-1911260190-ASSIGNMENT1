@@ -4,31 +4,24 @@ This repository contains the solutions and supporting documentation for CSA09 As
 
 The repository is organised by task so that each task's Java source code and related notes can be found easily. It also includes the completed assignment report and supporting design/testing materials.
 Repository contents
-CSA09_Assignment1_Solutions/
+CSA09_Assignment1/
 ├── README.md
-├── Task01/
-│   ├── Main.java
-│   └── Answer.md
-├── Task02/
-│   ├── Main.java
-│   └── Answer.md
-├── Task03/
-│   ├── ParkingFacility.java
-│   ├── ExpectedOutput.txt
-│   └── Answer.md
-├── Task04/
-├── Task05/
-├── Task06/
-│   └── UML.puml
-├── Task07/
-├── Task08/
-│   ├── FeeDemo.java
-│   ├── ExpectedOutput.txt
-│   └── Answer.md
-├── Task09/
-├── Task10/
-├── Task11/
-└── Task12/
+├── CSA09_Assignment1_Solutions.zip
+├── CSA09_Assignment1_Report_Original_Format.docx
+├── README_Report.md
+└── Tasks/
+    ├── Task01/
+    ├── Task02/
+    ├── Task03/
+    ├── Task04/
+    ├── Task05/
+    ├── Task06/
+    ├── Task07/
+    ├── Task08/
+    ├── Task09/
+    ├── Task10/
+    ├── Task11/
+    └── Task12/
 The exact folder names may differ depending on whether you upload the ZIP contents directly or keep the ZIP as a single file. The solutions ZIP contains the task folders and supporting files.
 Task folders
 The solutions archive contains folders named Task01 through Task12. Each folder contains the relevant task solution files where applicable, such as:
