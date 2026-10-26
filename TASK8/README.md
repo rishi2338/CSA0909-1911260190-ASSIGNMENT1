@@ -1,0 +1,5 @@
+# Task 8 — polymorphism
+
+Compile-time polymorphism is method overloading: `calculateFee(int minutes)` and `calculateFee(LocalTime in, LocalTime out)` have different parameter lists, so the compiler chooses based on argument types. Runtime polymorphism occurs when `Vehicle v = new Car(...)`; `v.calculateFee(130)` calls the inherited implementation, which invokes `ratePerHour()` dynamically on the actual `Car` object. Declared type: `Vehicle`; actual type: `Car`; selected rate method: `Car.ratePerHour()` returning 30. The 130-minute duration rounds up to 3 hours, so fee is Rs 90.
+
+The `FeeDemo.java` program completes the assignment's TODOs and preserves its expected output. `Car` and `ElectricCar` with the same registration compare equal because `equals` compares only registration. This may be acceptable if registration uniquely identifies a vehicle, but the domain must decide whether type belongs in equality. An `instanceof` chain can require up to k checks for k categories and grows in code size; dynamic dispatch selects the appropriate override without a central type chain. Typical virtual dispatch is effectively O(1), while a linear type-check chain is O(k).
